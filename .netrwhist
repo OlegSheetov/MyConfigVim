@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =6
+let g:netrw_dirhist_6='/home/superpc-ubuntu/webprogramming/at-present/build'
+let g:netrw_dirhist_5='/home/superpc-ubuntu/webprogramming/at-present/build/static'
+let g:netrw_dirhist_4='/home/superpc-ubuntu/webprogramming/at-present/build/static/js'
+let g:netrw_dirhist_3='/home/superpc-ubuntu/webprogramming/at-present/build/static'
+let g:netrw_dirhist_2='/home/superpc-ubuntu/webprogramming/at-present/build/static/media'
+let g:netrw_dirhist_1='/home/superpc-ubuntu/webprogramming/at-present/build/static'
+let g:netrw_dirhist_0='/home/superpc-ubuntu/webprogramming/at-present/build'
+let g:netrw_dirhist_9='/home/superpc-ubuntu/webprogramming/at-present/build/static'
+let g:netrw_dirhist_8='/home/superpc-ubuntu/webprogramming/at-present/build/static/js'
+let g:netrw_dirhist_7='/home/superpc-ubuntu/webprogramming/at-present/build/static'
