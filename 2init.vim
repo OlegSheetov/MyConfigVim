@@ -1,26 +1,14 @@
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.config/nvim/plugged')
     "JSX syntax highlight 
         Plug 'mxw/vim-jsx'
     "Autosave 
         Plug '907th/vim-auto-save'
-    "coloschemes... meant themes 
-        Plug 'flazz/vim-colorschemes'
     "autopair (auto closing brackets) 
-        Plug 'jiangmiao/auto-pairs' " airline 
-        Plug 'vim-airline/vim-airline'
-    " airline theme 
-        Plug 'vim-airline/vim-airline-themes'
+        Plug 'jiangmiao/auto-pairs' 
     "autorename tag for vim 
         Plug 'andrewradev/tagalong.vim'
-    "Prettier
-        Plug 'prettier/vim-prettier'
     "js highlight 
         Plug 'pangloss/vim-javascript'
-    "jsdoc 
-        Plug 'heavenshell/vim-jsdoc', {
-          \ 'for': ['javascript', 'javascript.jsx','typescript'],
-          \ 'do': 'make install'
-        \}
     "SuperTab (that like autocomplete but i don't know )
         Plug 'ervandew/supertab'
     "Emmet 
@@ -28,8 +16,6 @@ call plug#begin('~/.vim/plugged')
     "fuzzyfinder 
         Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
         Plug 'junegunn/fzf'
-    "jshit (static analyzer for vim) 
-        Plug 'shutnik/jshint2.vim'
     call plug#end()
 
 "vim preferences 
@@ -37,7 +23,7 @@ set nu
 set rnu
 let g:RltvNmbr=1
 syntax on 
-colo default 
+colo peachpuff
 set tabstop=4
 set shiftwidth=4
 set expandtab
@@ -58,8 +44,6 @@ let g:autoformat_autoindent = 0
 let g:autoformat_retab = 0
 let g:autoformat_remove_trailing_spaces = 0
 
-"airline theme 
-let g:airline_theme='deus'
 
 "Autosave preferences 
 let g:auto_save = 1
