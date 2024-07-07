@@ -1,14 +1,8 @@
 call plug#begin('~/.config/nvim/plugged')
-    "JSX syntax highlight 
-        Plug 'mxw/vim-jsx'
     "Autosave 
         Plug '907th/vim-auto-save'
     "autopair (auto closing brackets) 
         Plug 'jiangmiao/auto-pairs' 
-    "autorename tag for vim 
-        Plug 'andrewradev/tagalong.vim'
-    "js highlight 
-        Plug 'pangloss/vim-javascript'
     "SuperTab (that like autocomplete but i don't know )
         Plug 'ervandew/supertab'
     "Emmet 
@@ -19,11 +13,12 @@ call plug#begin('~/.config/nvim/plugged')
     call plug#end()
 
 "vim preferences 
+set lazyredraw
 set nu
 set rnu
 let g:RltvNmbr=1
 syntax on 
-colo peachpuff
+colo morning
 set tabstop=4
 set shiftwidth=4
 set expandtab
