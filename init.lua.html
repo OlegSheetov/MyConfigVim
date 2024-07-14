@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>~/.config/nvim/init.lua.html</title>
+<meta name="Generator" content="Vim/8.1">
+<meta name="plugin-version" content="vim9.0_v1">
+<meta name="syntax" content="none">
+<meta name="settings" content="use_css,no_foldcolumn,expand_tabs,pre_wrap,prevent_copy=,use_input_for_pc=fallback">
+<meta name="colorscheme" content="monokai">
+<style>
+<!--
+pre { white-space: pre-wrap; font-family: monospace; color: #ffffff; background-color: #000000; }
+body { font-family: monospace; color: #ffffff; background-color: #000000; }
+* { font-size: 1em; }
+-->
+</style>
+</head>
+<body>
+<pre id='vimCodeElement'>
+-- This file can be loaded by calling `lua require('plugins')` from your init.vim
+
+-- Additional vim config for plugins which don't find for lua and packer.
+vim.cmd('source ~/.config/nvim/additional_config.vim')
+-- Only required if you have packer configured as `opt`
+vim.cmd [[packadd packer.nvim]]
+
+
+return require('packer').startup(function(use)
+  -- Packer can manage itself
+  use 'wbthomason/packer.nvim'
+
+    use {
+      'nvim-telescope/telescope.nvim', tag = '0.1.6',
+    -- or                            , branch = '0.1.x',
+      requires = { {'nvim-lua/plenary.nvim'} }
+    }
+    vim.api.nvim_set_keymap('n', '&lt;F2&gt;', ':Telescope', { noremap = true, silent = false })
+
+
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        run = ':TSUpdate',
+    highlight = {
+        enabled = true
+    }
+    }
+
+     local builtin = require('telescope.builtin')
+    vim.keymap.set('n', '&lt;F3&gt;', builtin.find_files, {})
+
+use {
+    &quot;williamboman/mason.nvim&quot;
+}
+
+use(&quot;keyvchan/monokai.nvim&quot;)
+
+vim.opt.relativenumber = true
+vim.opt.lazyredraw = true
+
+use({
+  'projekt0n/github-nvim-theme',
+  config = function()
+    require('github-theme').setup({
+      -- ...
+    })
+
+    vim.cmd('colorscheme monokai')
+  end
+})
+use({
+  &quot;okuuva/auto-save.nvim&quot;,
+  config = function()
+   require(&quot;auto-save&quot;).setup {
+     -- your config goes here
+     -- or just leave it empty :)
+   }
+  end,
+})
+
+use 'm4xshen/autoclose.nvim'
+require(&quot;autoclose&quot;).setup()
+
+vim.api.nvim_set_keymap('n', '\\', ':noh&lt;CR&gt;', { noremap = true, silent = true })
+
+vim.api.nvim_set_keymap('n', '&lt;F5&gt;', ':!pypy3 %&lt;CR&gt;', { noremap = true, silent = true })
+
+-- chatgpt
+use({
+  &quot;jackMort/ChatGPT.nvim&quot;,
+    config = function()
+      require(&quot;chatgpt&quot;).setup()
+    end,
+    requires = {
+      &quot;MunifTanjim/nui.nvim&quot;,
+      &quot;nvim-lua/plenary.nvim&quot;,
+      &quot;folke/trouble.nvim&quot;,
+      &quot;nvim-telescope/telescope.nvim&quot;
+    }
+})
+
+end)
+
+
+
+</pre>
+</body>
+</html>
+<!-- vim: set foldmethod=manual : -->

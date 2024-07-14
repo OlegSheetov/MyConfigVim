@@ -6,7 +6,6 @@ vim.cmd('source ~/.config/nvim/additional_config.vim')
 vim.cmd [[packadd packer.nvim]]
 
 
-
 return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
@@ -17,16 +16,17 @@ return require('packer').startup(function(use)
 	  requires = { {'nvim-lua/plenary.nvim'} }
 	}
 
+
     use {
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate',
-	highlight = {
-		enabled = true
-	}
+        highlight = {
+            enabled = true
+        }
     }
 
 	 local builtin = require('telescope.builtin')
-	vim.keymap.set('n', '<F3>', builtin.find_files, {})
+    vim.keymap.set('n', '<F3>', builtin.find_files, {})
 
 use {
     "williamboman/mason.nvim"
@@ -63,4 +63,27 @@ require("autoclose").setup()
 vim.api.nvim_set_keymap('n', '\\', ':noh<CR>', { noremap = true, silent = true })
  
 vim.api.nvim_set_keymap('n', '<F5>', ':!pypy3 %<CR>', { noremap = true, silent = true })
+-- chatgpt
+use({
+  "jackMort/ChatGPT.nvim",
+    config = function()
+      require("chatgpt").setup()
+    end,
+    requires = {
+      "MunifTanjim/nui.nvim",
+      "nvim-lua/plenary.nvim",
+      "folke/trouble.nvim",
+      "nvim-telescope/telescope.nvim"
+    }
+})
+
+use {
+  'VonHeikemen/fine-cmdline.nvim',
+  requires = {
+    {'MunifTanjim/nui.nvim'}
+  }
+}
 end)
+
+
+
