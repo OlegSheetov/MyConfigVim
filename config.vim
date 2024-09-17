@@ -18,7 +18,7 @@ set nu
 set rnu
 let g:RltvNmbr=1
 syntax on 
-colo morning
+colo elflord
 set tabstop=4
 set shiftwidth=4
 set expandtab
