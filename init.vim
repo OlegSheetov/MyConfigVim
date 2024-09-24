@@ -15,11 +15,13 @@ call plug#begin('~/.config/nvim/plugged')
 set nu
 set rnu
 set cursorline
-colo elflord
+colo github_dark_default
 set tabstop=4
 set shiftwidth=4
 set expandtab
 set wildmenu
+set path+=**
+
 
 
 "Autocomplete
