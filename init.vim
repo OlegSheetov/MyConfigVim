@@ -55,6 +55,7 @@ autocmd TextChanged * if &modifiable && !&readonly | :w | endif
 autocmd TextChangedI * if &modifiable && !&readonly | :w | endif
   
 "Keybindings
+nnoremap <F1> :!python3 %  <CR>
 nnoremap <F2> :find  
 nnoremap <F4> :Explore <CR>  
 nnoremap <F3> :tabnew <CR>
@@ -113,11 +114,6 @@ require'lspconfig'.pyright.setup{}
 EOF
 
 
-"Lsp setup 
-
-lua << EOF
-require'lspconfig'.pyright.setup{}
-EOF
 
 
 
